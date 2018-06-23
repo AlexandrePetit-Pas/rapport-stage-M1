@@ -1,0 +1,9 @@
+JavaScript est un langage de programmation orienté objet à prototype. Il est utilisé dans la plupart des pages web mais peut être utilisé aussi côté serveur. Nous ne parlerons cependant que du Javascript "côté client" car c'est avec celui-ci que les graphiques sont représentés sur internet.\\
+
+Il existe un grand nombre de bibliothèques JavaScript permettant de faire des graphiques sous deux formats "d'image" : le vectoriel et le matriciel.\\
+
+Le SVG, ou \textit{Scalable Vector Graphics}\footnote{graphique vectoriel adaptable}, est un format de données utilisé pour créer des ensembles vectoriels sur une page web. Les images vectorielles ne perdent pas de qualité lors d'un redimensionnement puisque ses primitives géométriques\footnote{exemple : un segment est une primitive géométrique} contiennent des attributs sur lesquels des transformations sont possibles (dont la mise à l'échelle).\\
+
+Le canvas est un composant de HTML\footnote{HyperText Markup Language}, langage de balisage conçu pour les pages web. Il permet d'afficher des rendus d'image matricielle grâce au javascript. À la différence du SVG, le canvas n'est pas \textit{scalable}, c'est à dire que la qualité diminue lors d'une mise à l'échelle.\\
+
+Le côté \textit{scalable} du SVG rend ce format plus populaire que le canvas. C'est pourquoi une majorité de bibliothèques JavaScript se sert des SVG comme format de graphique, comme Chartist~\cite{chartist}, Plotly~\cite{plotly}, D3~\cite{d3} ou encore Highchart~\cite{highcharts}. Cependant, de grosses bibliothèques utilisent les canvas, comme Chart.js~\cite{chartjs} ou CanvasJS~\cite{canvasjs}. Les bibliothèques sont pour la plupart libres. Parmi les bibliothèques citées, Highchart et CanvasJS sont les seules bibliothèques propriétaires.

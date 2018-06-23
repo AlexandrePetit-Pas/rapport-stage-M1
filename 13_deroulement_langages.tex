@@ -1,0 +1,20 @@
+Deux langages ont été utilisés pour le développement de \textit{Business Explorer}, le module sur lequel j'ai travaillé durant mon stage : Python pour le côté serveur (\textit{back-end}) et JavaScript pour le côté client (\textit{front-end}).\\
+
+\subsection{Python}
+Python a été choisi car l'objectif de \textit{Business Explorer} est de s'intégrer facilement à \textit{fineLink} dont le développement a été fait en Python. Le fait d'utiliser un autre langage pour une partie d'un site est coûteux en termes de ressources car il faut intégrer le nouveau langage dans l'existant. De plus, cela demandera aux autres membres de l'équipe de développement d'avoir des compétences avancées dans ces deux langages. L'objectif n'est pas de programmer pour soi-même, mais d'avoir un code lisible, compréhensible et facile à entretenir. Par ailleurs Python est un langage couramment utilisé par la communauté scientifique et particulièrement les statistiques. C'est pourquoi dans le cas de Business Explorer, il est avantageux d'utiliser ce langage pour manipuler les données. On peut trouver facilement de la documentation ou des réponses pour pallier des problèmes quelconques.\\
+
+\subsection{Django}
+Étant une application web, \textit{finElink} utilise le framework Django pour faciliter son développement. La documentation et les bonnes pratiques du framework en font une technologie réputée et utilisée par de grands noms pour leur site web, comme \textit{Instragram}, \textit{Mozilla} ou encore \textit{Pinterest}. Il utilise un \textit{design pattern}\footnote{patron de conception} qui lui est propre, le \textbf{Model View Template} (MVT). C'est un dérivé d'un patron plus connu qui est le \textit{Model View Controller} (MVC). Le \textit{Model} s'occupe de gérer les données de l'application, le \textit{Template} se charge d'afficher les données à l'utilisateur tandis que la \textit{View} se charge de faire le lien entre le \textit{model} et le \textit{template}. Il faut cependant faire attention aux \textit{View} du MVT et du MVC qui sont deux choses totalement distinctes~\cite{mvt}. La \textit{View} de Django correspond au \textit{Controller} du modèle MVC tandis que le \textit{Template} correspond à un fichier HTML avec du langage de template spécifique à Django. La partie \textit{Model} de Django est constitué d'un \textit{ORM}\footnote{Object-Relational Mapping} qui fait l'interface entre le programme et la base de données. Cette couche d'abstraction permet de traiter les données de la base comme des objets Python. Django apporte des fonctionnalités de sécurité par défaut contre :
+\begin{itemize}
+\item le Cross Site Scripting (XSS)\footnote{injection de script dans le navigateur}
+\item le Cross Site Request Forgery (CSRF)
+\item les injections SQL
+\item le clickjacking
+\end{itemize}
+
+\subsection{Javascript}
+JavaScript~\cite{js} a été choisi comme langage \textit{front-end} car c'est le seul employé sur les pages web pour apporter de l'interactivité. Il existe une grande quantité de bibliothèques et de framework.\\
+
+jQuery~\cite{jQuery} a été utilisée pour simplifier le développement des scripts JavaScript. Plus de la moitié des sites web l'utilise, ce qui veut dire qu'il est présent dans la plupart des caches des utilisateurs. De plus, certaines fonctionnalités du design de \textit{finElink} s'appuient sur jQuery, rendant le choix de son utilisation pour \textit{Business Explorer} neutre.\\
+
+Data-Driven Documents (\textbf{D3}) est une bibliothèque de visualisation de données écrites en JavaScript. Elle offre la possibilité de manipuler les SVG, les Canvas et les éléments HTML. C'est l'une des bibliothèques de graphiques les plus utilisées pour les pages web. Les raisons de ce choix sont explicitées à la \hyperref[comp_bibliotheques]{section 5.5.1}.

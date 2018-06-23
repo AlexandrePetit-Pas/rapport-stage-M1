@@ -1,0 +1,186 @@
+\documentclass[12pt,french,a4paper, oneside,openright]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage{subfiles}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{gensymb}
+\usepackage{geometry}
+\usepackage{shorttoc}
+\usepackage[Glenn]{fncychap}
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+\usepackage{float}
+\addbibresource{bibliographie.bib}
+
+\geometry{
+	paper=a4paper,
+	inner=2.5cm,
+	outer=2.5cm,
+	top=2.5cm,
+	bottom=3.5cm
+}
+
+\ChNameVar{\Huge\fontfamily{Comfortaa}\selectfont\color{red}}
+\ChNumVar{\Huge\fontfamily{Comfortaa}\selectfont\color{red}}
+\ChTitleVar{\Huge\fontfamily{Comfortaa}\selectfont\scshape\color{black}}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+\renewcommand\thesection{\color{red}\thechapter.\arabic{section}}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\setlength{\parskip}{0.1cm}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+
+    \HRule \\[0.4cm]
+    {
+      \huge
+        \textbf{Smart data : analyses, valorisations et visualisations de données stratégiques multi sources}
+    }
+    \HRule \\[1.5cm]
+    {\includegraphics[scale=0.6, draft=false]{./resources/upn.jpg}}
+    \\[1.5cm]
+    \textsc{\Large Rapport de stage \linebreak Master MIAGE I - Promotion 2018-2019}\\[1.5cm]
+    
+    \large 9 Avril 2017 — 31 Juillet 2017
+    \\[1.5cm]
+	\emph{Auteur:} Alexandre \textsc{Petit-Pas}\\
+	\emph{Tuteur:} Gaétan \textsc{Le Chat}\\
+  	\emph{Référent:} Pascal \textsc{Poizat}\\[1cm]
+	{\includegraphics[scale=0.5, draft=false]{./resources/frs.jpg}}
+    
+    
+
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\newpage
+\ 
+\newpage
+{\color{red}\textbf{Remerciements}}\\
+\subfile{01_remerciements}
+\newpage
+\ 
+\newpage
+\shorttoc{Sommaire}{1}
+\newpage
+\ 
+\newpage
+\chapter{Introduction}
+\subfile{02_introduction}
+\newpage
+\
+\newpage
+\chapter{FRS Consulting}
+\subfile{03_frsconsulting}
+
+\chapter{Recommandation de dispositifs d'aide à l'innovation}
+\section{finElink}
+\subfile{04_finelink}
+\section{Business Explorer}
+\subfile{05_businessexplorer}
+
+\newpage
+\ 
+\newpage
+\chapter{État de l'art}
+\subfile{06_etat_art_intro}
+\section{La datavisualisation}
+\subfile{07_etat_art_dataviz}
+\section{Les solutions similaires}
+\subfile{08_etat_art_solutions}
+\section{Les langages de traitement de données}
+\subfile{09_etat_art_langages}
+\section{La diversité des graphiques}
+\subfile{10_etat_art_graphiques}
+\section{Représenter un graphique en Javascript}
+\subfile{11_etat_art_graphiques_js}
+\section{Complexité du parcours des données}
+\subfile{12_etat_art_complexite}
+
+\newpage
+\chapter{Déroulement du stage}
+\section{Langages utilisés}
+\subfile{13_deroulement_langages}
+\section{Environnement de travail}
+\subfile{15_deroulement_environnement}
+\section{Gestion du projet}
+\subfile{16_deroulement_gestion_projet}
+\section{Méthodes de travail}
+\subfile{17_deroulement_methodes}
+\section{Réalisations}
+\subfile{18_deroulement_résalisations}
+\section{Améliorations}
+\subfile{19_deroulement_ameliorations}
+\section{Évolution du projet}
+\subfile{20_deroulement_evolution}
+
+\chapter{Bilan}
+\subfile{21_bilan}
+
+\newpage
+\ 
+\newpage
+\subfile{annexes}
+
+\printbibliography[heading=bibintoc]
+
+\tableofcontents
+\newpage
+\ 
+\newpage
+\listoffigures
+\newpage
+\ 
+\newpage
+\listoftables
+\newpage
+\ 
+\newpage
+\lstlistoflistings
+
+\end{document}

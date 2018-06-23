@@ -1,0 +1,24 @@
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{ | l | c | r | }
+\hline
+ & Tableau & Dictionnaire \\
+ \hline
+Copie de la structure & O(n) & O(n) \\
+Itération sur la structure & O(n) & O(n) \\
+Récupération d'un élément & O(1) & O(1) \\
+Mise à jour d'un élément & O(1) & O(1) \\
+Suppression d'un élément & O(1) & O(n) \\
+Ajout d'un élément & O(1) & O(1) \\
+\hline
+\end{tabular}
+\caption{Complexité des opérations sur les tableaux et dictionnaires Python}
+\end{center}
+\end{table}
+
+
+La complexité d'un programme correspond à la quantité de ressources requises pour exécuter un algorithme. Elle est généralement représentée par un "Grand O" et permet de déterminer le nombre d'étapes de calcul d'un algorithme. Pour déterminer la complexité du traitement de données, je me suis appuyé sur le document \textit{TimeComplexity} de Python~\cite{TimeComplexity}. J'ai choisi ce document car le traitement de données se fera en Python, il était donc pertinent de regarder sa complexité en particulier, bien que celle-ci varie très peu entre les langages. Lorsque l'on prend en compte la complexité d'un algorithme, il faut regarder le pire scénario possible. Cela donne une limite sur le temps maximal que peut prendre un programme.\\
+
+Parmi les structures de données disponibles en Python, les plus utilisées sont les dictionnaires et les tableaux. Un tableau est un ensemble ordonné d'éléments accessibles par leur indice. Un dictionnaire, ou tableau associatif, est un ensemble de couple clé-valeur dont chaque élément est accessible par sa clé. Il existe différentes opérations suivant la structure de la donnée, en revanche, certaines sont communes et importantes : la copie de structure, l'itération sur la structure, la récupération d'un élément, sa mise à jour, sa suppression et l'ajout d'un élément (à la suite de la liste de données pour un Tableau).\\
+
+D'après la table 4.1, on peut tout de suite voir que la différence se fait au niveau de la suppression d'un élément. Ce qui veut dire que les deux structures de données ont une complexité similaire. La différence d'accès aux données fait que les tableaux seront plus utilisés pour exploiter des ensembles ou chaque élément n'est pas connu à l'avance. Au contraire, les dictionnaires sont utilisés lorsque l'on connait la ou les clés et que l'on veut exploiter leurs valeurs.

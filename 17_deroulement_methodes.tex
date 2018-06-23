@@ -1,0 +1,42 @@
+Afin de réaliser l'application Business Explorer, j'ai divisé mon travail en 7 étapes :
+\begin{itemize}
+\item Proposition d'une solution
+\item Discussion de la proposition
+\item Développement d'un prototype de la solution
+\item Validation du prototype
+\item Amélioration ou changement du prototype
+\item Test du prototype
+\item Refactor du code
+\end{itemize}
+J'ai décidé de suivre cette méthode car dans un premier temps, elle me permettait d'exprimer mon avis en prenant en compte celui des autres. L'avantage de l'équipe est qu'elle est composée de membres ayant des compétences diverses. J'ai donc profité de mon expérience passée et celle de mes collègues pour enrichir la partie réflexion. Cela m'a permis en particulier, de mieux comprendre comment mettre en valeur des données d'un point de vue financier. Dans un second temps, la spécificité des données de FRS rendait les exemples génériques de datavisualisation peu viables, c'est pourquoi je proposais à chaque fois une première version dite de "prototype" pour avoir la certitude et la preuve de la pertinence du graphique. Une fois celui-ci validé, je rajoutais des améliorations de toutes sortes :
+\begin{itemize}
+\item Mise en place de la sécurisation des données
+\item Amélioration visuelle
+\item Ajout d'interaction sur la page
+\end{itemize}
+Quand la fonctionnalité était terminée, j'écrivais les tests pour vérifier que le code fonctionnait correctement pour qu'en cas de changement, la stabilité de mon travail ne soit pas impactée. Enfin, du temps était consacré au refactor de mon code pour qu'il soit plus propre, plus facile à entretenir et qu'il respecte les normes PEP8 (\textit{style code}) et PEP257 (\textit{docstring}) de Python. Pour le JavaScript, j'ai suivi les conventions de code ECMA6 car c'est l'une des dernières normes supportées par les navigateurs web. \\
+
+Lors du refactor de mon code, je me suis inspiré d'une convention\footnote{\textit{Towards Reusable Charts}} proposée par Mike Bostock~\cite{reusablecharts}, créateur de la bibliothèque D3. Cette convention consiste à créer des fonctions génériques pour manipuler des graphiques, de la création à la modification. En plus de cela, l'utilisation du design pattern \textit{method chaining} permet d'exécuter des opérations sur les graphiques de manière plus propre, comme le montre le listing 5.1.
+
+\newpage
+\lstset{language=JavaScript}
+\begin{lstlisting}[caption={Exemple de \textit{method chaining} proposé par Mike Bostock}]
+function chart(selection) {
+	var width = 100; // largeur par defaut
+	var height = 100; // hauteur par defaut
+	
+	function element() {
+		// creation du graphique avec les valeurs par defaut
+	}
+	
+	element.width = function(value) {
+		if (!arguments.length) return width
+		width = value;
+		return element;
+	}
+}
+// id = identifiant de l'element
+var myChart = chart(id).width(500);
+myChart.width(); // 500
+myChart.width(700); // set la largeur a 700
+\end{lstlisting}
